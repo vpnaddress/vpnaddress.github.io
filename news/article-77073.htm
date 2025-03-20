@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnaddress.github.io/news/article-77073.htm" />
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS 删除数组中某个元素的几种方式</title>
+        <meta name="description" content="目录 第一种：删除最后一个元素 pop 删除 slice 删除 &nbsp;splice 删除 for 删除 length 删除 第二种: 删除第一个元素 shift 删除 slice 删除 spli" />
+        <link rel="icon" href="/assets/website/img/windowsnekoray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN地址分享 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnaddress.github.io/news/article-77073.htm" />
+    <meta property="og:site_name" content="VPN地址分享 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="JS 删除数组中某个元素的几种方式" />
+    <meta property="og:image" content="https://vpnaddress.github.io/uploads/20240707/13e332565d5b9c7ac09a41500b110ff9.webp" />
+        <meta property="og:release_date" content="2025-03-19T09:10:44" />
+    <meta property="og:updated_time" content="2025-03-19T09:10:44" />
+        <meta property="og:description" content="目录 第一种：删除最后一个元素 pop 删除 slice 删除 &nbsp;splice 删除 for 删除 length 删除 第二种: 删除第一个元素 shift 删除 slice 删除 spli" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="JS 删除数组中某个元素的几种方式">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="/assets/website/css/windowsnekoray/bootstrap.min.css">
+    <!-- FONT-AWESOME -->
+    <link rel="stylesheet" href="/assets/website/css/windowsnekoray/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- OWL CAROUSEL -->
+    <link href="/assets/website/css/windowsnekoray/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/css/windowsnekoray/owl.theme.default.min.css" rel="stylesheet">
+    <!-- LIGHTBOX -->
+    <link rel=" stylesheet" href="/assets/website/css/windowsnekoray/lightbox.css">
+    <!--Style CSS file-->
+    <link rel=" stylesheet" href="/assets/website/css/windowsnekoray/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J35WSP1N0P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J35WSP1N0P');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ====== Preloader ======  -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- ======End Preloader ======  -->
+    <!-- ======START NAVGITION ======  -->
+    <nav class="navbar navbar-expand-lg">
+        <!-- logo -->
+        <a class="navbar-brand" href="/">
+                <span>VPN地址分享</span>
+                </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
+            <span class="icon-bar"><i class="fa fa-bars fa-2x"></i></span>
+        </button>
+        <!--End of Resposive Toggle icon-->
+        <div class="collapse navbar-collapse" id="navbarText">
+            <!--Main menu navigation list-->
+            <ul class="navbar-nav ml-auto line">
+                                <li class="nav-item">
+                    <a class="nav-link" href="/">首页</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/news/">新闻资讯</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/client.htm">客户端</a>
+                </li>
+                            </ul>
+            <!--End of Main menu navigation list-->
+        </div>
+        <!--End of resposive collapse class-->
+    </nav>
+    <!-- ====== END NAVGITION ======  -->
+    <!-- =======START HEADER=========== -->
+    <header class="home list" id="home" data-scroll-index="0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 home-content mt-md-5 mt-sm-5">
+                    <h2 class="heading-tertiary mt-3 mb-3">
+                        JS 删除数组中某个元素的几种方式                    </h2>
+                    <p class="mb-5">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ====== END HEADER ======  -->
+    <!-- Scroll to Top -->
+    <div id="scroll-to-top"><i class="fa fa-arrow-up fa-fw"></i></div>
+    <!-- ====== START ABOUT ======  -->
+    <section class="about padding" id="about" data-scroll-index="1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p id="main-toc"><strong>目录</strong></p> <p id="%E7%AC%AC%E4%B8%80%E7%A7%8D%EF%BC%9A%E5%88%A0%E9%99%A4%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0-toc" style="margin-left:40px;"><a href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%EF%BC%9A%E5%88%A0%E9%99%A4%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0" rel="nofollow">第一种：删除最后一个元素</a></p> <p id="pop%20%E5%88%A0%E9%99%A4-toc" style="margin-left:80px;"><a href="#pop%20%E5%88%A0%E9%99%A4" rel="nofollow">pop 删除</a></p> <p id="slice%20%E5%88%A0%E9%99%A4%C2%A0-toc" style="margin-left:80px;"><a href="#slice%20%E5%88%A0%E9%99%A4%C2%A0" rel="nofollow">slice 删除</a></p> <p id="%C2%A0splice%20%E5%88%A0%E9%99%A4-toc" style="margin-left:80px;"><a href="#%C2%A0splice%20%E5%88%A0%E9%99%A4" rel="nofollow">&nbsp;splice 删除</a></p> <p id="for%20%E5%88%A0%E9%99%A4-toc" style="margin-left:80px;"><a href="#for%20%E5%88%A0%E9%99%A4" rel="nofollow">for 删除</a></p> <p id="length%20%E5%88%A0%E9%99%A4-toc" style="margin-left:80px;"><a href="#length%20%E5%88%A0%E9%99%A4" rel="nofollow">length 删除</a></p> <p id="%E7%AC%AC%E4%BA%8C%E7%A7%8D%3A%20%E5%88%A0%E9%99%A4%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0-toc" style="margin-left:40px;"><a href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%3A%20%E5%88%A0%E9%99%A4%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0" rel="nofollow">第二种: 删除第一个元素</a></p> <p id="shift%20%E5%88%A0%E9%99%A4-toc" style="margin-left:80px;"><a href="#shift%20%E5%88%A0%E9%99%A4" rel="nofollow">shift 删除</a></p> <p id="slice%20%E5%88%A0%E9%99%A4-toc" style="margin-left:80px;"><a href="#slice%20%E5%88%A0%E9%99%A4" rel="nofollow">slice 删除</a></p> <p id="splice%20%E5%88%A0%E9%99%A4-toc" style="margin-left:80px;"><a href="#splice%20%E5%88%A0%E9%99%A4" rel="nofollow">splice 删除</a></p> <p id="%E7%AC%AC%E4%B8%89%E7%A7%8D%EF%BC%9A%E5%88%A0%E9%99%A4%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%90%E4%B8%AA%E6%8C%87%E5%AE%9A%E4%B8%8B%E6%A0%87%E7%9A%84%E5%85%83%E7%B4%A0-toc" style="margin-left:40px;"><a href="#%E7%AC%AC%E4%B8%89%E7%A7%8D%EF%BC%9A%E5%88%A0%E9%99%A4%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%90%E4%B8%AA%E6%8C%87%E5%AE%9A%E4%B8%8B%E6%A0%87%E7%9A%84%E5%85%83%E7%B4%A0" rel="nofollow">第三种：删除数组中某个指定下标的元素</a></p> <p id="splice%C2%A0%E5%88%A0%E9%99%A4-toc" style="margin-left:80px;"><a href="#splice%C2%A0%E5%88%A0%E9%99%A4" rel="nofollow">splice&nbsp;删除</a></p> <p style="margin-left:80px;"><a href="#for%20%E5%88%A0%E9%99%A4" rel="nofollow">for 删除</a></p> <p id="%E7%AC%AC%E5%9B%9B%E7%A7%8D%EF%BC%9A%E5%88%A0%E9%99%A4%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%90%E4%B8%AA%E6%8C%87%E5%AE%9A%E5%85%83%E7%B4%A0-toc" style="margin-left:40px;"><a href="#%E7%AC%AC%E5%9B%9B%E7%A7%8D%EF%BC%9A%E5%88%A0%E9%99%A4%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%90%E4%B8%AA%E6%8C%87%E5%AE%9A%E5%85%83%E7%B4%A0" rel="nofollow">第四种：删除数组中某个指定元素的元素</a></p> <p style="margin-left:80px;"><a href="#splice%20%E5%88%A0%E9%99%A4" rel="nofollow">splice 删除</a></p> <p id="filter%C2%A0%E5%88%A0%E9%99%A4-toc" style="margin-left:80px;"><a href="#filter%C2%A0%E5%88%A0%E9%99%A4" rel="nofollow">filter&nbsp;删除</a></p> <p id="forEach%E3%80%81map%E3%80%81for%20%E5%88%A0%E9%99%A4-toc" style="margin-left:80px;"><a href="#forEach%E3%80%81map%E3%80%81for%20%E5%88%A0%E9%99%A4" rel="nofollow">forEach、map、for 删除</a></p> <p id="Set%20%E5%88%A0%E9%99%A4-toc" style="margin-left:80px;"><a href="#Set%20%E5%88%A0%E9%99%A4" rel="nofollow">Set 删除</a></p> <hr id="hr-toc"/> <p style="margin-left:80px;"> <h2 id="%E7%AC%AC%E4%B8%80%E7%A7%8D%EF%BC%9A%E5%88%A0%E9%99%A4%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0">第一种：删除最后一个元素</h2> <h3 id="pop%20%E5%88%A0%E9%99%A4">pop 删除</h3> <pre><code class="language-javascript">var arr = [1,2,3,4,5] arr.pop() // arr =&gt; [1,2,3,4]</code></pre> <h3 id="slice%20%E5%88%A0%E9%99%A4%C2%A0">slice 删除</h3> <pre><code class="language-javascript">var arr = [1,2,3,4,5] var new_arr = arr.slice(0, -1) // arr =&gt; [1,2,3,4,5] // new_arr =&gt; [1,2,3,4]  var arr = [1,2,3,4,5] var new_arr = arr.slice(0, arr.length - 1) // arr =&gt; [1,2,3,4,5] // new_arr =&gt; [1,2,3,4]</code></pre> <h3 id="%C2%A0splice%20%E5%88%A0%E9%99%A4">&nbsp;splice 删除</h3> <pre><code class="language-javascript">var arr = [1,2,3,4,5] var new_arr = arr.splice(-1) // arr =&gt; [1,2,3,4] // new_arr =&gt; [5]  var arr = [1,2,3,4,5] var new_arr = arr.splice(-1, 1) // arr =&gt; [1,2,3,4] // new_arr =&gt; [5]  var arr = [1,2,3,4,5] var new_arr = arr.splice(arr.length - 1) // arr =&gt; [1,2,3,4] // new_arr =&gt; [5]  var arr = [1,2,3,4,5] var new_arr = arr.splice(arr.length - 1, 1) // arr =&gt; [1,2,3,4] // new_arr =&gt; [5]</code></pre> <h3 id="for%20%E5%88%A0%E9%99%A4">for 删除</h3> <pre><code class="language-javascript">var arr = [1,2,3,4,5] var new_arr = [] for (let i = 0, len = arr.length; i &lt; len; i++) {     if (i &lt; len - 1) {         new_arr.push(arr[i])     } } // arr =&gt; [1,2,3,4,5] // new_arr =&gt; [1,2,3,4]</code></pre> <h3 id="length%20%E5%88%A0%E9%99%A4">length 删除</h3> <pre><code class="language-javascript">var arr = [1,2,3,4,5] arr.length = arr.length - 1 // arr =&gt; [1,2,3,4]</code></pre> <h2 id="%E7%AC%AC%E4%BA%8C%E7%A7%8D%3A%20%E5%88%A0%E9%99%A4%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0">第二种: 删除第一个元素</h2> <h3 id="shift%20%E5%88%A0%E9%99%A4">shift 删除</h3> <pre><code class="language-javascript">var arr = [1,2,3,4,5] arr.shift() // arr =&gt; [2,3,4,5]</code></pre> <h3 id="slice%20%E5%88%A0%E9%99%A4">slice 删除</h3> <pre><code class="language-javascript">var arr = [1,2,3,4,5] var new_arr = arr.slice(1) // arr =&gt; [1,2,3,4,5] // new_arr =&gt; [2,3,4,5]</code></pre> <h3 id="splice%20%E5%88%A0%E9%99%A4">splice 删除</h3> <pre><code class="language-javascript">var arr = [1,2,3,4,5] var new_arr = arr.splice(0, 1) // arr =&gt; [2,3,4,5] // new_arr =&gt; [1]</code></pre> <h2 id="%E7%AC%AC%E4%B8%89%E7%A7%8D%EF%BC%9A%E5%88%A0%E9%99%A4%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%90%E4%B8%AA%E6%8C%87%E5%AE%9A%E4%B8%8B%E6%A0%87%E7%9A%84%E5%85%83%E7%B4%A0">第三种：删除数组中某个指定下标的元素</h2> <h3 id="splice%C2%A0%E5%88%A0%E9%99%A4">splice&nbsp;删除</h3> <pre><code class="language-javascript">var delete_index = 2 var arr = [1,2,3,4,5] // arr =&gt; [1,2,3,4,5] var new_arr = arr.splice(delete_index, 1) // new_arr =&gt; [3] // arr =&gt; [1,2,4,5]</code></pre> <h3>for 删除</h3> <pre><code class="language-javascript">var delete_index = 2,     arr = [1,2,3,4,5],     new_arr = []  for (let i = 0, len = arr.length; i &lt; len; i++) {     if (i != delete_index) {         new_arr.push(arr[i])     } }  // arr =&gt; [1,2,3,4,5] // new_arr =&gt; [1,2,4,5]</code></pre> <p>注意：</p> <p>1. 不可以使用 delete 方式删除数组中某个元素，此操作会造成稀疏数组，被删除的元素的为位置依然存在为empty，且数组的长度不变</p> <p>2. 不可以使用 forEach 方法比对数组下标值，因为 forEach 在循环的时候是无序的</p> <h2 id="%E7%AC%AC%E5%9B%9B%E7%A7%8D%EF%BC%9A%E5%88%A0%E9%99%A4%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%90%E4%B8%AA%E6%8C%87%E5%AE%9A%E5%85%83%E7%B4%A0">第四种：删除数组中某个指定元素的元素</h2> <h3>splice 删除</h3> <pre><code class="language-javascript">var element = 2,     arr = [1,2,3,4,5]  arr.splice(arr.indexOf(2), 1) // arr =&gt; [1,3,4,5]</code></pre> <h3 id="filter%C2%A0%E5%88%A0%E9%99%A4">filter&nbsp;删除</h3> <pre><code class="language-javascript">var arr = [1,2,3,4,5],     element = 2  arr = arr.filter(item =&gt; item != element) // arr =&gt; [1,3,4,5]</code></pre> <h3 id="forEach%E3%80%81map%E3%80%81for%20%E5%88%A0%E9%99%A4">forEach、map、for 删除</h3> <pre><code class="language-javascript">var arr = [1,2,3,4,5],     element = 2,     new_arr = [] arr.forEach(item =&gt; (item != element &amp;&amp; new_arr.push(item))) // new_arr =&gt; [1,3,4,5]  // map 同理  var arr = [1,2,3,4,5],     element = 2,     new_arr = []  for (let i = 0; i &lt; arr.length; i++) {     arr[i] != element &amp;&amp; new_arr.push(arr[i]) } // new_arr =&gt; [1,3,4,5]</code></pre> <h3 id="Set%20%E5%88%A0%E9%99%A4">Set 删除</h3> <pre><code class="language-javascript">var arr = [1,2,3,4,5],     element = 2 var new_set = new Set(arr) new_set.delete(element) var new_arr = [...new_set] // new_arr =&gt; [1,3,4,5]</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-76646.htm">动物疫苗公司产量排名榜前十名（动物疫苗行业排名）</a></p>
+                                        <p>下一个：<a href="/news/article-77074.htm">大型饲料颗粒机生产厂家（饲料颗粒机十强企业）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-clash-v2ray-ss-ssr.htm" title="VPN地址分享 | 3月18日21.2M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点地址">VPN地址分享 | 3月18日21.2M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-76645.htm" title="记一次Spring|项目启动耗时超级长的优化">记一次Spring|项目启动耗时超级长的优化</a></li>
+                        <li class="py-2"><a href="/news/article-77740.htm" title="宠物粮怎么卖（宠物粮食怎么卖）">宠物粮怎么卖（宠物粮食怎么卖）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-free-node-subscribe-links.htm" title="VPN地址分享 | 3月20日18.5M/S|免费V2ray/SSR/Clash/Shadowrocket订阅节点地址">VPN地址分享 | 3月20日18.5M/S|免费V2ray/SSR/Clash/Shadowrocket订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-77073.htm" title="JS 删除数组中某个元素的几种方式">JS 删除数组中某个元素的几种方式</a></li>
+                        <li class="py-2"><a href="/news/article-76646.htm" title="动物疫苗公司产量排名榜前十名（动物疫苗行业排名）">动物疫苗公司产量排名榜前十名（动物疫苗行业排名）</a></li>
+                        <li class="py-2"><a href="/news/article-77074.htm" title="大型饲料颗粒机生产厂家（饲料颗粒机十强企业）">大型饲料颗粒机生产厂家（饲料颗粒机十强企业）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-free-node-subscribe-links.htm" title="VPN地址分享 | 3月19日18.2M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点地址">VPN地址分享 | 3月19日18.2M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-77741.htm" title="18岁的女生适合用的面膜品牌有哪些呢(18岁的女生适合用的面膜品牌有哪些牌子)">18岁的女生适合用的面膜品牌有哪些呢(18岁的女生适合用的面膜品牌有哪些牌子)</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== END ABOUT======  -->
+        <!-- ====== START FOOTER ======  -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- START FOOTER BOTTOM -->
+                <div class="offset-md-3 col-md-6 offset-md-3">
+                    <!-- START RIGHTS -->
+                    <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>VPN地址分享 推荐免费VPN节点订阅中文网 版权所有</p>
+                        <p>Powered by WordPress</p>
+                    </div>
+                    <!-- END RIGHTS -->
+                </div>
+                <!-- END FOOTER BOTTOM -->
+            </div>
+        </div>
+    </section>
+    <!-- ====== END FOOTER ======  -->
+    <!-- ====== JS ======  -->
+    <!--jquery-3.3.1 js-->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery-3.3.1.min.js"></script>
+    <!-- popper js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/bootstrap.min.js"></script>
+    <!-- scrollIt js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/scrollIt.min.js"></script>
+    <!-- countTo js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery.countTo.js"></script>
+    <!-- filter js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery.filterizr.min.js"></script>
+    <!-- waypoints js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/waypoints.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/owl.carousel.min.js"></script>
+    <!-- validator js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/validator.js"></script>
+    <!-- coustom js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/main.js"></script>
+    <!-- lightbox js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/lightbox.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
