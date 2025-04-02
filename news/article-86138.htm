@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnaddress.github.io/news/article-86138.htm" />
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>单链表之按顺序插入元素</title>
+        <meta name="description" content="单向链表第二种添加方式： 按照排名将节点插入指定位置，如果指定位置有节点，就提示添加失败！  需要按照编号的顺序添加  首先找到新添加节点的位置，通过辅助变量，遍历来搞定 新的节点.next = te" />
+        <link rel="icon" href="/assets/website/img/windowsnekoray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN地址分享 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnaddress.github.io/news/article-86138.htm" />
+    <meta property="og:site_name" content="VPN地址分享 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="单链表之按顺序插入元素" />
+    <meta property="og:image" content="https://vpnaddress.github.io/uploads/20240707/130827bc8a5bdf042dfb7d6c01792032.webp" />
+        <meta property="og:release_date" content="2025-04-01T09:48:44" />
+    <meta property="og:updated_time" content="2025-04-01T09:48:44" />
+        <meta property="og:description" content="单向链表第二种添加方式： 按照排名将节点插入指定位置，如果指定位置有节点，就提示添加失败！  需要按照编号的顺序添加  首先找到新添加节点的位置，通过辅助变量，遍历来搞定 新的节点.next = te" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="单链表之按顺序插入元素">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="/assets/website/css/windowsnekoray/bootstrap.min.css">
+    <!-- FONT-AWESOME -->
+    <link rel="stylesheet" href="/assets/website/css/windowsnekoray/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- OWL CAROUSEL -->
+    <link href="/assets/website/css/windowsnekoray/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/css/windowsnekoray/owl.theme.default.min.css" rel="stylesheet">
+    <!-- LIGHTBOX -->
+    <link rel=" stylesheet" href="/assets/website/css/windowsnekoray/lightbox.css">
+    <!--Style CSS file-->
+    <link rel=" stylesheet" href="/assets/website/css/windowsnekoray/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J35WSP1N0P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J35WSP1N0P');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ====== Preloader ======  -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- ======End Preloader ======  -->
+    <!-- ======START NAVGITION ======  -->
+    <nav class="navbar navbar-expand-lg">
+        <!-- logo -->
+        <a class="navbar-brand" href="/">
+                <span>VPN地址分享</span>
+                </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
+            <span class="icon-bar"><i class="fa fa-bars fa-2x"></i></span>
+        </button>
+        <!--End of Resposive Toggle icon-->
+        <div class="collapse navbar-collapse" id="navbarText">
+            <!--Main menu navigation list-->
+            <ul class="navbar-nav ml-auto line">
+                                <li class="nav-item">
+                    <a class="nav-link" href="/">首页</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/news/">新闻资讯</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/client.htm">客户端</a>
+                </li>
+                            </ul>
+            <!--End of Main menu navigation list-->
+        </div>
+        <!--End of resposive collapse class-->
+    </nav>
+    <!-- ====== END NAVGITION ======  -->
+    <!-- =======START HEADER=========== -->
+    <header class="home list" id="home" data-scroll-index="0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 home-content mt-md-5 mt-sm-5">
+                    <h2 class="heading-tertiary mt-3 mb-3">
+                        单链表之按顺序插入元素                    </h2>
+                    <p class="mb-5">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ====== END HEADER ======  -->
+    <!-- Scroll to Top -->
+    <div id="scroll-to-top"><i class="fa fa-arrow-up fa-fw"></i></div>
+    <!-- ====== START ABOUT ======  -->
+    <section class="about padding" id="about" data-scroll-index="1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>单向链表第二种添加方式：</p> <p>按照排名将节点插入指定位置，如果指定位置有节点，就提示添加失败！</p> <p><img fetchpriority="high" decoding="async" alt="" height="327" src="http://img.555519.xyz/uploads3/20220902/c87f9d051e38d586343d97985126a749.jpg"></p> <p>需要按照编号的顺序添加</p> <ul> <li>首先找到新添加节点的位置，通过辅助变量，遍历来搞定</li> <li>新的节点.next = temp.next</li> <li>将temp.next = 新的节点</li> </ul> <pre><code class="language-java">//第二种方式插入节点     //按照英雄排名插入到指定位置，如果有这个排名，则提示插入失败     public void addNode2(HeroNode heroNode){         //因为我们找的temp是位于添加位置的前一个节点，否则添加不了         HeroNode temp = head;         boolean flag = false;   //flag标志添加的编号是否存在，默认为false         while(true){             if(temp.next == null){  //说明temp已经在链表的最后                 break;             }             if(temp.next.no &gt; heroNode.no){    //位置已找到                 break;             }else if(temp.next.no == heroNode.no){   //说明要添加的heroNode的no已存在于链表中                 flag = true;   //说明编号存在                 break;             }             temp = temp.next;   //后移，遍历当前链表         }         if(flag){  //如果flag为真，则说明heroNode.no已存在，打印提示信息             System.out.println("添加失败！此英雄的编号"+heroNode.no+"存在");         }else{             //插入到链表中，temp后面             heroNode.next = temp.next;             temp.next = heroNode;         }</code></pre> <p>测试：<img decoding="async" alt="" height="340" src="http://img.555519.xyz/uploads3/20220902/c45216989fdb603c6f5ef8b55c90d005.jpg"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-85420.htm">宠物店生意冷清（宠物店解决什么问题）</a></p>
+                                        <p>下一个：<a href="/news/article-86139.htm">猫咪多久能认主人（猫咪多长时间认主人）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-81861.htm" title="动物疫苗厂家查询电话（动物疫苗经销商）">动物疫苗厂家查询电话（动物疫苗经销商）</a></li>
+                        <li class="py-2"><a href="/news/article-79802.htm" title="动物医院实践心得3000字内容怎么写（动物医院社会实践报告）">动物医院实践心得3000字内容怎么写（动物医院社会实践报告）</a></li>
+                        <li class="py-2"><a href="/news/article-77740.htm" title="宠物粮怎么卖（宠物粮食怎么卖）">宠物粮怎么卖（宠物粮食怎么卖）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-28-node-share.htm" title="VPN地址分享 | 3月28日20.8M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点地址">VPN地址分享 | 3月28日20.8M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-node-subscribe-links.htm" title="VPN地址分享 | 3月25日22.8M/S|免费SSR/V2ray/Clash/Shadowrocket订阅节点地址">VPN地址分享 | 3月25日22.8M/S|免费SSR/V2ray/Clash/Shadowrocket订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-79128.htm" title="Spring Security教程（13）&#8212;- 验证码功能的实现">Spring Security教程（13）&#8212;- 验证码功能的实现</a></li>
+                        <li class="py-2"><a href="/news/article-76646.htm" title="动物疫苗公司产量排名榜前十名（动物疫苗行业排名）">动物疫苗公司产量排名榜前十名（动物疫苗行业排名）</a></li>
+                        <li class="py-2"><a href="/news/article-78439.htm" title="宠物领养协议模板下载电子版（宠物领养协议书电子版）">宠物领养协议模板下载电子版（宠物领养协议书电子版）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-free-node-subscribe-links.htm" title="VPN地址分享 | 3月19日18.2M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点地址">VPN地址分享 | 3月19日18.2M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-23-free-v2ray-subscribe.htm" title="VPN地址分享 | 3月23日21.5M/S|免费Clash/SSR/V2ray/Shadowrocket订阅节点地址">VPN地址分享 | 3月23日21.5M/S|免费Clash/SSR/V2ray/Shadowrocket订阅节点地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">41</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== END ABOUT======  -->
+        <!-- ====== START FOOTER ======  -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- START FOOTER BOTTOM -->
+                <div class="offset-md-3 col-md-6 offset-md-3">
+                    <!-- START RIGHTS -->
+                    <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>VPN地址分享 推荐免费VPN节点订阅中文网 版权所有</p>
+                        <p>Powered by WordPress</p>
+                    </div>
+                    <!-- END RIGHTS -->
+                </div>
+                <!-- END FOOTER BOTTOM -->
+            </div>
+        </div>
+    </section>
+    <!-- ====== END FOOTER ======  -->
+    <!-- ====== JS ======  -->
+    <!--jquery-3.3.1 js-->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery-3.3.1.min.js"></script>
+    <!-- popper js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/bootstrap.min.js"></script>
+    <!-- scrollIt js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/scrollIt.min.js"></script>
+    <!-- countTo js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery.countTo.js"></script>
+    <!-- filter js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery.filterizr.min.js"></script>
+    <!-- waypoints js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/waypoints.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/owl.carousel.min.js"></script>
+    <!-- validator js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/validator.js"></script>
+    <!-- coustom js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/main.js"></script>
+    <!-- lightbox js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/lightbox.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

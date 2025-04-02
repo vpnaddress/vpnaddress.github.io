@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnaddress.github.io/news/article-85419.htm" />
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>pycharm连接sqlite</title>
+        <meta name="description" content="进行创建上了一个Django项目之后，进行点击 菜单中的view 菜单。&nbsp;  进行点击了view菜单之后，进行点击下拉菜单选中为tool windows的选项。  弹出了下拉下一级菜单选中为" />
+        <link rel="icon" href="/assets/website/img/windowsnekoray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN地址分享 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnaddress.github.io/news/article-85419.htm" />
+    <meta property="og:site_name" content="VPN地址分享 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="pycharm连接sqlite" />
+    <meta property="og:image" content="https://vpnaddress.github.io/uploads/20240707/dc49bc9be89beb82ff381ffcb4455aa6.webp" />
+        <meta property="og:release_date" content="2025-03-31T08:41:39" />
+    <meta property="og:updated_time" content="2025-03-31T08:41:39" />
+        <meta property="og:description" content="进行创建上了一个Django项目之后，进行点击 菜单中的view 菜单。&nbsp;  进行点击了view菜单之后，进行点击下拉菜单选中为tool windows的选项。  弹出了下拉下一级菜单选中为" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="pycharm连接sqlite">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="/assets/website/css/windowsnekoray/bootstrap.min.css">
+    <!-- FONT-AWESOME -->
+    <link rel="stylesheet" href="/assets/website/css/windowsnekoray/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- OWL CAROUSEL -->
+    <link href="/assets/website/css/windowsnekoray/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/css/windowsnekoray/owl.theme.default.min.css" rel="stylesheet">
+    <!-- LIGHTBOX -->
+    <link rel=" stylesheet" href="/assets/website/css/windowsnekoray/lightbox.css">
+    <!--Style CSS file-->
+    <link rel=" stylesheet" href="/assets/website/css/windowsnekoray/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J35WSP1N0P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J35WSP1N0P');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ====== Preloader ======  -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- ======End Preloader ======  -->
+    <!-- ======START NAVGITION ======  -->
+    <nav class="navbar navbar-expand-lg">
+        <!-- logo -->
+        <a class="navbar-brand" href="/">
+                <span>VPN地址分享</span>
+                </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
+            <span class="icon-bar"><i class="fa fa-bars fa-2x"></i></span>
+        </button>
+        <!--End of Resposive Toggle icon-->
+        <div class="collapse navbar-collapse" id="navbarText">
+            <!--Main menu navigation list-->
+            <ul class="navbar-nav ml-auto line">
+                                <li class="nav-item">
+                    <a class="nav-link" href="/">首页</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/news/">新闻资讯</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/client.htm">客户端</a>
+                </li>
+                            </ul>
+            <!--End of Main menu navigation list-->
+        </div>
+        <!--End of resposive collapse class-->
+    </nav>
+    <!-- ====== END NAVGITION ======  -->
+    <!-- =======START HEADER=========== -->
+    <header class="home list" id="home" data-scroll-index="0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 home-content mt-md-5 mt-sm-5">
+                    <h2 class="heading-tertiary mt-3 mb-3">
+                        pycharm连接sqlite                    </h2>
+                    <p class="mb-5">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ====== END HEADER ======  -->
+    <!-- Scroll to Top -->
+    <div id="scroll-to-top"><i class="fa fa-arrow-up fa-fw"></i></div>
+    <!-- ====== START ABOUT ======  -->
+    <section class="about padding" id="about" data-scroll-index="1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>进行创建上了一个Django项目之后，进行点击 菜单中的view 菜单。&nbsp;</p> <p><img decoding="async" alt="sqlite" class="has" src="http://img.555519.xyz/uploads/20230110/7ff453d2d311a50b4851de9672a78f25.jpg"></p> <p>进行点击了view菜单之后，进行点击下拉菜单选中为tool windows的选项。</p> <p><img decoding="async" alt="sqlite" class="has" src="http://img.555519.xyz/uploads/20230110/d03e42718fee30715a4c3459a25abee7.jpg"></p> <p>弹出了下拉下一级菜单选中为 database 的选项。</p> <p><img decoding="async" alt="sqlite" class="has" src="http://img.555519.xyz/uploads/20230110/b405beb6cf50346a2faa785d340e7566.jpg"></p> <p>　　弹出了database的选项之后，进行点击 添加 按钮。</p> <p><img decoding="async" alt="sqlite" class="has" src="http://img.555519.xyz/uploads/20230110/63933728a93807be8b66b82f3672064f.jpg"></p> <p>　　弹出了下拉菜单选中为data source后，选中为sqlite的选项。</p> <p><img decoding="async" alt="sqlite" class="has" src="http://img.555519.xyz/uploads/20230110/7d1a03df5c14e057135a13185ddd4865.jpg"></p> <p>　　然后点击窗口中的 download的选项。进行安装驱动。</p> <p><img decoding="async" alt="sqlite" class="has" src="http://img.555519.xyz/uploads/20230110/86a4394a4d1f0d9a445274ce17eaa27b.jpg"></p> <p>　　然后进行再file的路径中，进行选中数据库文件</p> <p><img decoding="async" alt="sqlite" class="has" src="http://img.555519.xyz/uploads/20230110/098ce316b355983579893349c4f1b3c4.jpg"></p> <p>　　这样数据库就连接完成了，可以看到的是列表当中显示了数据库。</p> <p><img decoding="async" alt="sqlite" class="has" src="http://img.555519.xyz/uploads/20230110/11c3ac7f1512e487e9b523eb1b385b6e.jpg"></p> <p>转载自<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://pcedu.pconline.com.cn/1227/12270536.html"  rel="nofollow">https://pcedu.pconline.com.cn/1227/12270536.html</a></p> <p>若无database。则：</p> <p>第一步，点击file/setting/plugins 如下图所示</p> <p><img decoding="async" alt="" class="has" src="http://img.555519.xyz/uploads/20230110/518140db2f43a7594d2c8752544a2fc3.jpg"></p> <p>第二步，搜索database 安装database Nivagator 并Apply</p> <p><img decoding="async" alt="" class="has" src="http://img.555519.xyz/uploads/20230110/d4e7173b29b3707556b0e864b17aec2a.jpg"></p> <p>第三步，新建数据库连接，open sql console，并test conection</p> <p><img decoding="async" alt="" class="has" src="http://img.555519.xyz/uploads/20230110/1cd91baa76945b3655cc40d51c84d893.jpg"></p> <p>第四步，在pycharm右下角点击图标如下（DB Browser）</p> <p><img decoding="async" alt="" class="has" src="http://img.555519.xyz/uploads/20230110/b01d81b0e225c8e99fc568302edcef80.jpg"></p> <p>最后，打开数据库（双击表单选择 no filter）如图</p> <p><img decoding="async" alt="" class="has" src="http://img.555519.xyz/uploads/20230110/ce60f196d4ce18291805f1e8277eb997.jpg"></p> <p>现在，就可以像database一样可以连接并查看数据库的内容了。</p> <p>参考自<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/perl2py/p/6593769.html"  rel="nofollow">https://www.cnblogs.com/perl2py/p/6593769.html</a></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-84706.htm">参观动物医院的心得体会300字（参观动物园心得）</a></p>
+                                        <p>下一个：<a href="/news/article-85420.htm">宠物店生意冷清（宠物店解决什么问题）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-clash-v2ray-ss-ssr.htm" title="VPN地址分享 | 3月21日22.8M/S|免费SSR/V2ray/Clash/Shadowrocket订阅节点地址">VPN地址分享 | 3月21日22.8M/S|免费SSR/V2ray/Clash/Shadowrocket订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-79129.htm" title="动物疫苗生产资质要求（动物疫苗生产资质要求是什么）">动物疫苗生产资质要求（动物疫苗生产资质要求是什么）</a></li>
+                        <li class="py-2"><a href="/news/article-86851.htm" title="动物防疫疫苗种类有哪些品种的（动物疫苗种类及类型）">动物防疫疫苗种类有哪些品种的（动物疫苗种类及类型）</a></li>
+                        <li class="py-2"><a href="/news/article-85419.htm" title="pycharm连接sqlite">pycharm连接sqlite</a></li>
+                        <li class="py-2"><a href="/news/article-76645.htm" title="记一次Spring|项目启动耗时超级长的优化">记一次Spring|项目启动耗时超级长的优化</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-free-subscribe-node.htm" title="VPN地址分享 | 3月24日19.8M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点地址">VPN地址分享 | 3月24日19.8M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-81198.htm" title="Linux安装gssapi、kafka-python实现Kerberos认证连接Kafka等中间件集群服务（最新版）">Linux安装gssapi、kafka-python实现Kerberos认证连接Kafka等中间件集群服务（最新版）</a></li>
+                        <li class="py-2"><a href="/news/article-83979.htm" title="全国动物疫苗生产厂家有哪些品牌（全国动物疫苗生产厂家有哪些品牌好）">全国动物疫苗生产厂家有哪些品牌（全国动物疫苗生产厂家有哪些品牌好）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-free-node-subscribe-links.htm" title="VPN地址分享 | 3月19日18.2M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点地址">VPN地址分享 | 3月19日18.2M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-clash-v2ray-ss-ssr.htm" title="VPN地址分享 | 3月18日21.2M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点地址">VPN地址分享 | 3月18日21.2M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">41</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== END ABOUT======  -->
+        <!-- ====== START FOOTER ======  -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- START FOOTER BOTTOM -->
+                <div class="offset-md-3 col-md-6 offset-md-3">
+                    <!-- START RIGHTS -->
+                    <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                        <p>VPN地址分享 推荐免费VPN节点订阅中文网 版权所有</p>
+                        <p>Powered by WordPress</p>
+                    </div>
+                    <!-- END RIGHTS -->
+                </div>
+                <!-- END FOOTER BOTTOM -->
+            </div>
+        </div>
+    </section>
+    <!-- ====== END FOOTER ======  -->
+    <!-- ====== JS ======  -->
+    <!--jquery-3.3.1 js-->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery-3.3.1.min.js"></script>
+    <!-- popper js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/bootstrap.min.js"></script>
+    <!-- scrollIt js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/scrollIt.min.js"></script>
+    <!-- countTo js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery.countTo.js"></script>
+    <!-- filter js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery.filterizr.min.js"></script>
+    <!-- waypoints js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/waypoints.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/owl.carousel.min.js"></script>
+    <!-- validator js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/validator.js"></script>
+    <!-- coustom js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/main.js"></script>
+    <!-- lightbox js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/lightbox.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
