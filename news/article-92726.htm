@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnaddress.github.io/news/article-92726.htm" />
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>liunx中搭建python3.7环境和安装pycharm并搭建Django</title>
+        <meta name="description" content="首先第一步我们先安装python3.7的环境在liunx中，先去下面这个网站然后找到Gzipped source tarball https://www.python.org/downloads/re" />
+        <link rel="icon" href="/assets/website/img/windowsnekoray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN地址分享 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnaddress.github.io/news/article-92726.htm" />
+    <meta property="og:site_name" content="VPN地址分享 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="liunx中搭建python3.7环境和安装pycharm并搭建Django" />
+    <meta property="og:image" content="https://vpnaddress.github.io/uploads/20240707/db90d92b0022fb015e39c15ea2f7f41c.webp" />
+        <meta property="og:release_date" content="2025-04-10T08:18:20" />
+    <meta property="og:updated_time" content="2025-04-10T08:18:20" />
+        <meta property="og:description" content="首先第一步我们先安装python3.7的环境在liunx中，先去下面这个网站然后找到Gzipped source tarball https://www.python.org/downloads/re" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="liunx中搭建python3.7环境和安装pycharm并搭建Django">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="/assets/website/css/windowsnekoray/bootstrap.min.css">
+    <!-- FONT-AWESOME -->
+    <link rel="stylesheet" href="/assets/website/css/windowsnekoray/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- OWL CAROUSEL -->
+    <link href="/assets/website/css/windowsnekoray/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/css/windowsnekoray/owl.theme.default.min.css" rel="stylesheet">
+    <!-- LIGHTBOX -->
+    <link rel=" stylesheet" href="/assets/website/css/windowsnekoray/lightbox.css">
+    <!--Style CSS file-->
+    <link rel=" stylesheet" href="/assets/website/css/windowsnekoray/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J35WSP1N0P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J35WSP1N0P');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ====== Preloader ======  -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- ======End Preloader ======  -->
+    <!-- ======START NAVGITION ======  -->
+    <nav class="navbar navbar-expand-lg">
+        <!-- logo -->
+        <a class="navbar-brand" href="/">
+                <span>VPN地址分享</span>
+                </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
+            <span class="icon-bar"><i class="fa fa-bars fa-2x"></i></span>
+        </button>
+        <!--End of Resposive Toggle icon-->
+        <div class="collapse navbar-collapse" id="navbarText">
+            <!--Main menu navigation list-->
+            <ul class="navbar-nav ml-auto line">
+                                <li class="nav-item">
+                    <a class="nav-link" href="/">首页</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/news/">新闻资讯</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/client.htm">客户端</a>
+                </li>
+                            </ul>
+            <!--End of Main menu navigation list-->
+        </div>
+        <!--End of resposive collapse class-->
+    </nav>
+    <!-- ====== END NAVGITION ======  -->
+    <!-- =======START HEADER=========== -->
+    <header class="home list" id="home" data-scroll-index="0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 home-content mt-md-5 mt-sm-5">
+                    <h2 class="heading-tertiary mt-3 mb-3">
+                        liunx中搭建python3.7环境和安装pycharm并搭建Django                    </h2>
+                    <p class="mb-5">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ====== END HEADER ======  -->
+    <!-- Scroll to Top -->
+    <div id="scroll-to-top"><i class="fa fa-arrow-up fa-fw"></i></div>
+    <!-- ====== START ABOUT ======  -->
+    <section class="about padding" id="about" data-scroll-index="1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>首先第一步我们先安装python3.7的环境在liunx中，先去下面这个网站然后找到Gzipped source tarball<br /> https://www.python.org/downloads/release/python-377/<br /> 下拉到最底下选择它然后下载<br /> 如果python中已经安装就跳过这一步<br /> 用python --version<br /> 检查后如果已经装好python就不用安装<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/47e0c55aa4bf54660e4df73f033df826.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"></p> </h1> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/98b500f3221eabfda1ec8df3ae11dc03.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"><br /> 然后解压出来tar -xvf Python-3.7.7.tgz<br /> 解压python3.7的安装包到目录中<br /> 然后切换到python的安装目录中<br /> cd /root/Python-3.7.7<br /> 检查是否有遗漏的没有装的内容<br /> ./configure<br /> 没有问题后就执行安装<br /> make &amp;&amp; make install<br /> 然后输入python如果能进入python就代表安装成功。</p> </h1> <p>去到pycharm官网然后点击Professional版本不然我们后面django无法安装<br /> https://www.jetbrains.com/pycharm/download/#section=linux<br /> 然后用xftp上传到liunx服务器中<img decoding="async" src="http://img.555519.xyz/uploads/20230108/2a207593a3da14f9df3d058815a276ba.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"><br /> 然后用tar-xvf pycharm-community-2022.3.1.tar.gz<br /> 解压<br /> 然后cd /root/pycharm-community-2022.3.1/bin<br /> 切换到目录里面/<br /> ./pycharm.sh<br /> 然后进入编辑器环境<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/5e783aaeb19798701af1c7fda6eacd35.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"><br /> 新建一个项目然后输入print(‘hello world’)显示出来即可<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/557c52f60deedf7e9314c77dbb185876.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"></p> </h1> <pre><code class="prism language-python">sudo gedit <span class="token operator">/</span>usr<span class="token operator">/</span>share<span class="token operator">/</span>applications<span class="token operator">/</span>Pycharm<span class="token punctuation">.</span>desktop </code></pre> <p>然后修改文件</p> <pre><code class="prism language-python"><span class="token punctuation">[</span>Desktop Entry<span class="token punctuation">]</span> Type<span class="token operator">=</span>Application Name<span class="token operator">=</span>Pycharm GenericName<span class="token operator">=</span>Pycharm3 Comment<span class="token operator">=</span>Pycharm3<span class="token punctuation">:</span>The Python IDE Exec<span class="token operator">=</span>sh <span class="token operator">/</span>root<span class="token operator">/</span>pycharm<span class="token operator">-</span><span class="token number">2022.3</span><span class="token number">.1</span><span class="token operator">/</span><span class="token builtin">bin</span><span class="token operator">/</span>pycharm<span class="token punctuation">.</span>sh Icon<span class="token operator">=</span><span class="token operator">/</span>root<span class="token operator">/</span>pycharm<span class="token operator">-</span><span class="token number">2022.3</span><span class="token number">.1</span><span class="token operator">/</span><span class="token builtin">bin</span><span class="token operator">/</span>pycharm<span class="token punctuation">.</span>png Terminal<span class="token operator">=</span>pycharm Categories<span class="token operator">=</span>Pycharm<span class="token punctuation">;</span> </code></pre> <p>然后重启一下就可以看到快捷命令出现，但是有一种情况就是安装失败，你需要切换成管理员用户才能出现pycharm的快捷启动图标<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/94222e9f1de4aaf79dab29a08a521f05.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"></p> </h1> <p>pip3 install django -i https://pypi.douban.com/simple/<br /> 用国内镜像下载快，如果pip3没有安装的话会默认帮你安装按y下一步即可<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/c98a092981c1eefa01deeecc8acb2c45.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"><br /> python -m django --version<br /> 验证django的版本<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/cffbf8453cc6a565721e131f7c6b270f.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"><br /> 、<br /> 在pycharm中Terminal中将镜像更改成国内镜像这样第一次创建django项目时速度会很快</p> <pre><code class="prism language-java">pip config set global<span class="token punctuation">.</span>index<span class="token operator">-</span>url https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>pypi<span class="token punctuation">.</span>doubanio<span class="token punctuation">.</span>com<span class="token operator">/</span>simple </code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/cb322def9502c9b399f2fa5991a201ae.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"></p> <p>然后新建一个项目选择django，Location就是你的文件本地路径可以自己修改，New enviroment using就是django的配置环境默认你的系统安装python的版本，这里不用修改用默认即可。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/7f6d3d7a77ba661446e3c0068adf148d.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"></p> <p>点击开始箭头然后启动django<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/9919ca5dae567186763d6c64b3e8ffc5.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"><br /> 启动之后默认地址就是127.0.0.1:8000<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/e38ae3f1acba9839e1ad3e80b55473d7.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"><br /> 在浏览器输入http://127.0.0.1:8000/能够跳转到django默认的页面就代表搭建成功<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230108/05e4e3fc8c7083b7e9326c8aab9831ed.jpg" alt="liunx中搭建python3.7环境和安装pycharm并搭建Django"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-92011.htm">动物疫苗接种时间表图片大全集 动物疫苗接种时间表图片大全集下载</a></p>
+                                        <p>下一个：<a href="/news/article-92727.htm">你还不知道责任链模式的使用场景吗</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-90506.htm" title="上海宠物领养中心电话（上海宠物领养中心免费领养狗狗）">上海宠物领养中心电话（上海宠物领养中心免费领养狗狗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-node-subscribe-links.htm" title="VPN地址分享 | 3月25日22.8M/S|免费SSR/V2ray/Clash/Shadowrocket订阅节点地址">VPN地址分享 | 3月25日22.8M/S|免费SSR/V2ray/Clash/Shadowrocket订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-91022.htm" title="销售动物疫苗免增值税么为什么不能抵扣（动物疫苗好卖吗）">销售动物疫苗免增值税么为什么不能抵扣（动物疫苗好卖吗）</a></li>
+                        <li class="py-2"><a href="/news/article-89753.htm" title="宠物哪里可以领养（宠物在哪可以领养）">宠物哪里可以领养（宠物在哪可以领养）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-23-free-v2ray-subscribe.htm" title="VPN地址分享 | 3月23日21.5M/S|免费Clash/SSR/V2ray/Shadowrocket订阅节点地址">VPN地址分享 | 3月23日21.5M/S|免费Clash/SSR/V2ray/Shadowrocket订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-83255.htm" title="500公斤饲料粉碎搅拌机多少钱（一吨立式饲料粉碎搅拌机）">500公斤饲料粉碎搅拌机多少钱（一吨立式饲料粉碎搅拌机）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-2-clash-v2ray-ss-ssr.htm" title="VPN地址分享 | 4月2日20.1M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点地址">VPN地址分享 | 4月2日20.1M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-clash-v2ray-ss-ssr.htm" title="VPN地址分享 | 3月21日22.8M/S|免费SSR/V2ray/Clash/Shadowrocket订阅节点地址">VPN地址分享 | 3月21日22.8M/S|免费SSR/V2ray/Clash/Shadowrocket订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-free-subscribe-node.htm" title="VPN地址分享 | 3月24日19.8M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点地址">VPN地址分享 | 3月24日19.8M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-clash-v2ray-ss-ssr.htm" title="VPN地址分享 | 3月18日21.2M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点地址">VPN地址分享 | 3月18日21.2M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">41</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== END ABOUT======  -->
+        <!-- ====== START FOOTER ======  -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- START FOOTER BOTTOM -->
+                <div class="offset-md-3 col-md-6 offset-md-3">
+                    <!-- START RIGHTS -->
+                    <div class="copyright">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <p>VPN地址分享 推荐免费VPN节点订阅中文网 版权所有</p>
+                        <p>Powered by WordPress</p>
+                    </div>
+                    <!-- END RIGHTS -->
+                </div>
+                <!-- END FOOTER BOTTOM -->
+            </div>
+        </div>
+    </section>
+    <!-- ====== END FOOTER ======  -->
+    <!-- ====== JS ======  -->
+    <!--jquery-3.3.1 js-->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery-3.3.1.min.js"></script>
+    <!-- popper js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/bootstrap.min.js"></script>
+    <!-- scrollIt js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/scrollIt.min.js"></script>
+    <!-- countTo js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery.countTo.js"></script>
+    <!-- filter js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery.filterizr.min.js"></script>
+    <!-- waypoints js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/waypoints.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/owl.carousel.min.js"></script>
+    <!-- validator js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/validator.js"></script>
+    <!-- coustom js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/main.js"></script>
+    <!-- lightbox js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/lightbox.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
