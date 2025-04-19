@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnaddress.github.io/news/article-97173.htm" />
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3.7&#8211;Kotlin 课堂：标准函数和静态方法</title>
+        <meta name="description" content="3.7.1 标准函数 with、run和apply Kotlin 的标准函数指的是 Standara.kt 文件中定义的函数，任何Kotlin&nbsp; 代码都可以自由调用所有的标准函数。我们已经学" />
+        <link rel="icon" href="/assets/website/img/windowsnekoray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN地址分享 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnaddress.github.io/news/article-97173.htm" />
+    <meta property="og:site_name" content="VPN地址分享 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="3.7&#8211;Kotlin 课堂：标准函数和静态方法" />
+    <meta property="og:image" content="https://vpnaddress.github.io/uploads/20240707/13e332565d5b9c7ac09a41500b110ff9.webp" />
+        <meta property="og:release_date" content="2025-04-16T08:40:10" />
+    <meta property="og:updated_time" content="2025-04-16T08:40:10" />
+        <meta property="og:description" content="3.7.1 标准函数 with、run和apply Kotlin 的标准函数指的是 Standara.kt 文件中定义的函数，任何Kotlin&nbsp; 代码都可以自由调用所有的标准函数。我们已经学" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="3.7&#8211;Kotlin 课堂：标准函数和静态方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="/assets/website/css/windowsnekoray/bootstrap.min.css">
+    <!-- FONT-AWESOME -->
+    <link rel="stylesheet" href="/assets/website/css/windowsnekoray/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- OWL CAROUSEL -->
+    <link href="/assets/website/css/windowsnekoray/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/css/windowsnekoray/owl.theme.default.min.css" rel="stylesheet">
+    <!-- LIGHTBOX -->
+    <link rel=" stylesheet" href="/assets/website/css/windowsnekoray/lightbox.css">
+    <!--Style CSS file-->
+    <link rel=" stylesheet" href="/assets/website/css/windowsnekoray/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J35WSP1N0P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J35WSP1N0P');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ====== Preloader ======  -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- ======End Preloader ======  -->
+    <!-- ======START NAVGITION ======  -->
+    <nav class="navbar navbar-expand-lg">
+        <!-- logo -->
+        <a class="navbar-brand" href="/">
+                <span>VPN地址分享</span>
+                </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
+            <span class="icon-bar"><i class="fa fa-bars fa-2x"></i></span>
+        </button>
+        <!--End of Resposive Toggle icon-->
+        <div class="collapse navbar-collapse" id="navbarText">
+            <!--Main menu navigation list-->
+            <ul class="navbar-nav ml-auto line">
+                                <li class="nav-item">
+                    <a class="nav-link" href="/">首页</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/news/">新闻资讯</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/client.htm">客户端</a>
+                </li>
+                            </ul>
+            <!--End of Main menu navigation list-->
+        </div>
+        <!--End of resposive collapse class-->
+    </nav>
+    <!-- ====== END NAVGITION ======  -->
+    <!-- =======START HEADER=========== -->
+    <header class="home list" id="home" data-scroll-index="0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 home-content mt-md-5 mt-sm-5">
+                    <h2 class="heading-tertiary mt-3 mb-3">
+                        3.7&#8211;Kotlin 课堂：标准函数和静态方法                    </h2>
+                    <p class="mb-5">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ====== END HEADER ======  -->
+    <!-- Scroll to Top -->
+    <div id="scroll-to-top"><i class="fa fa-arrow-up fa-fw"></i></div>
+    <!-- ====== START ABOUT ======  -->
+    <section class="about padding" id="about" data-scroll-index="1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>3.7.1 标准函数 with、run和apply</p> <p style="text-indent:33px;">Kotlin 的标准函数指的是 Standara.kt 文件中定义的函数，任何Kotlin&nbsp; 代码都可以自由调用所有的标准函数。我们已经学习了let 标准函数 ，let 标准函数的主要作用就是配合.? 进行辅助判空处理。</p> <p style="text-indent:33px;"><span style="color:#7c79e5;">下面我们学习新的 标准函数with。with 函数接收两个参数，第一个参数可以是一个任意类型的对象，第二个参数是Lambda表达式。with 函数会在Lambda 表达式中提供第一个参数对象的上下文，并使用Lambda 表达式的最后一行代码作为返回值返回。</span></p> <pre><code class="language-Kotlin">with(obj){             // 这里是 ojb 的上下文             "value" // with 函数的返回值         }</code></pre> <p>这个函数可以让连续调用同一个对象的多个方法时让代码变得更加精简！</p> <p style="text-indent:33px;">我们举个例子，例如创建一个水果列表，将水果列表全部打印出来：</p> <pre><code class="language-Kotlin">fun printFruits(){         val list = listOf("Apple", "Banana", "Orange", "Pear", "Grape")         val buffer = StringBuilder()         buffer.append("Start eating fruits. \n")         for (fruit in list) {             buffer.append(fruit).append("\n")         }         buffer.append("Ate all fruits.")         val result = buffer.toString()         println(result)     }</code></pre> <p>我们会得到的打印结果为</p> <p><img fetchpriority="high" decoding="async" alt="" height="220" src="http://img.555519.xyz/uploads/20221230/da7e470a657d5f926bd0155455782a38.jpg"></p> <p>观察上面的代码我们可以看到多次调用了builder 对象的方法，其实这个时候就可以使用with 函数来让代码变得更加简单</p> <pre><code class="language-Kotlin">fun printFruits(){     val list = listOf("Apple", "Banana", "Orange", "Pear", "Grape")     val result = with(StringBuilder()) {         append("Start eating fruits. \n")         for (fruit in list) {             append(fruit).append("\n")         }         append("Ate all fruits.")         toString()     }     println(result) }</code></pre> <p>代码乍一看有点迷，这个append 方法怎么来的？ 我们在上面介绍了，with 第一个参数传入的是任意对象也就是StringBuilder ，而第二个参数是一个Lambda 表达式，<span style="color:#7c79e5;">with 函数会在Lambda 表达式中提供第一个参数对象的上下文&nbsp;</span>，&nbsp;这个上下文就是环境的意思，我们就可以调用这个上下文对象内置的方法函数了。也就是说我们在第一个参数传入了什么对象，那么Lambda 表达式内就会拥有这个对象的所有变量和函数，就相当于在对象内部调用函数，所以我们直接调用了StringBuilder&nbsp;对象的append 函数。</p> <p style="text-indent:33px;">接下来我们继续学习另外一个常用的标准函数 run 函数，这个函数和with 作用几乎是一模一样的，就是结构不同，<span style="color:#7c79e5;">with 函数是内置函数形式调用with(obj){} ，run 函数是 obj.run{} ，一个是通过传入对象，一个是通过对象调用，作用相同，也是Lambda表达式内包含上下文环境，最后一句代码为返回值，run 函数只有一个参数就是Lambda 表达式。我们来修改一下上面的代码：</span></p> <pre><code class="language-Kotlin">fun printFruits(){     val list = listOf("Apple", "Banana", "Orange", "Pear", "Grape")     val result = StringBuilder().run {         append("Start eating fruits. \n")         for (fruit in list) {             append(fruit).append("\n")         }         append("Ate all fruits.")         toString()     }     println(result) }</code></pre> <p style="text-indent:33px;"><span style="color:#7c79e5;">接下来学习本小节的最后一个函数 apply 函数，apply 函数和 run 函数基本相同，不同的地方在于，apply 会返回对象本身，Lambda 表达式内不存在返回值，也是在Lambda 表达式中提供对象的上下文，结构为 obj.apply{}。我们来修改一下代码：</span></p> <pre><code class="language-Kotlin">fun printFruits(){     val list = listOf("Apple", "Banana", "Orange", "Pear", "Grape")     val result = StringBuilder().apply {         append("Start eating fruits. \n")         for (fruit in list) {             append(fruit).append("\n")         }         append("Ate all fruits.")     }     println(result.toString()) }</code></pre> <p>可以看出来我们删掉了otString() 而在输出的时候 调用了 result.toString()，因为返回的是StringBuilder 对象的本身。</p> <p>这里我们就可以修改一下之前我们启动Activity 的代码了！</p> <pre><code class="language-Kotlin">companion object{         fun actionStart(context:Context,data1:String,data2:String){             val intent = Intent(context,SecondActivity::class.java).apply {                 putExtra("param1",data1)                 putExtra("param2",data2)             }             context.startActivity(intent)         }     } </code></pre> <p>怎么样？是不是又精简了很多。</p> <p>3.7.2 定义静态方法</p> <p style="text-indent:33px;">Java 中定义静态方法很简单，只需要在方法 返回值关键字前添加static 修饰符即可，通过类名.方法名调用。例如：</p> <pre><code class="language-java">public class Util {     public static void doAction(){         System.out.println("do action");     } } </code></pre> <p>我们在Kotlin 中是没有这个static 修饰符的，Kotlin 极度弱化了静态方法的概念，我们想要在一个类中定义一个静态方法反倒是一件麻烦的事，因为Kotlin 提供了一个更好的语法特性，单例类。</p> <pre><code class="language-Kotlin">object Util {     fun doAction(){         println("do action")     } }</code></pre> <p>单例类的特性是在第一次调用的时候会创建这个类，其调用函数的方式和调用静态类中的调用方式相同。但是如果我们想要在一个非单例类中调用一个静态方法怎么办？就类似之前我们写的启动Activity 方式，这就运用到了<span style="color:#3399ea;"><strong>companion object</strong></span>了，由于之前都已经使用过了，这里直接解释原理。</p> <p style="text-indent:33px;"><span style="color:#3399ea;"><strong>companion object&nbsp;</strong></span><span style="color:#7c79e5;"> 会代码块内的函数和变量会直接被编译成静态的，但是一个类 使用了</span><span style="color:#3399ea;"><strong>companion object&nbsp;</strong></span><span style="color:#7c79e5;">关键字后，那么这个类就会创建一个伴生类，类似于</span><span style="color:#3399ea;"><strong> 匿名内部类&nbsp;</strong></span><span style="color:#7c79e5;">，既然类似于</span><span style="color:#3399ea;"><strong>匿名内部类</strong></span><span style="color:#7c79e5;">&nbsp;，那么就可以去继承其他的类：</span></p> <pre><code class="language-Kotlin">class Util {     fun doAction(){         println("do action1")     }     companion object:Father(){         fun doAction1(){             println("do action2")         }     } }</code></pre> <p>但是如果在Java 中以静态方法的形式调用，会发现这个方法并不存在，因为在伴生类中所以编译会有差异，如果我们在<span style="color:#3399ea;"><strong>companion object&nbsp;</strong></span>内部函数上添加<strong><span style="color:#3399ea;">@jvmStatic</span></strong> 注解，那么Kotlin 编译器就会将这个方法编译成真正的静态方法！</p> <pre><code class="language-Kotlin">class Util {     fun doAction(){         println("do action1")     }     companion object:Father(){         @JvmStatic         fun doAction1(){             println("do action2")         }     } }</code></pre> <p>这样添加注解后使用Java 代码也可以调用了。</p> <p style="text-indent:33px;"><span style="color:#7c79e5;">另外我们定义的顶层方法也是会被编译成静态方法的，什么是顶层方法呢？就是在 类外面定义的方法，就如同我们在Kotlin 中间中定义的main 方法一样，只要定义了这种函数，我们在Kotlin 中的任意类或者文件都是直接可以调用的，不用管包名，不用管路径，也不用创建实例 ，直接键入 函数即可。</span>但是在Java 中不存在顶层函数的概念，会找不到这个函数的，Java 需要通过文件名Kt.函数名的方式调用。</p> <pre><code class="language-java">public void quote(){         KotlinKt.printFruits();     }</code></pre> <p style="text-indent:33px;">任何有顶层函数的class 文件&nbsp;都会变成.kt 文件哦。</p> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-97172.htm">Python 替换.txt文件中的字符</a></p>
+                                        <p>下一个：<a href="/news/article-97963.htm">Python语法学习之进程的创建与常用方法详解_python</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-79802.htm" title="动物医院实践心得3000字内容怎么写（动物医院社会实践报告）">动物医院实践心得3000字内容怎么写（动物医院社会实践报告）</a></li>
+                        <li class="py-2"><a href="/news/article-82554.htm" title="开宠物店的人有钱吗（开宠物店的人有钱吗现在）">开宠物店的人有钱吗（开宠物店的人有钱吗现在）</a></li>
+                        <li class="py-2"><a href="/news/article-84705.htm" title="重庆宠物领养中心宠物领养（重庆宠物猫领养中心）">重庆宠物领养中心宠物领养（重庆宠物猫领养中心）</a></li>
+                        <li class="py-2"><a href="/news/article-92727.htm" title="你还不知道责任链模式的使用场景吗">你还不知道责任链模式的使用场景吗</a></li>
+                        <li class="py-2"><a href="/news/article-80462.htm" title="动物医院诊疗范围包括哪些 动物医院怎么样">动物医院诊疗范围包括哪些 动物医院怎么样</a></li>
+                        <li class="py-2"><a href="/news/article-85419.htm" title="pycharm连接sqlite">pycharm连接sqlite</a></li>
+                        <li class="py-2"><a href="/news/article-96496.htm" title="领养狐狸在哪领（养狐狸怎么申请）">领养狐狸在哪领（养狐狸怎么申请）</a></li>
+                        <li class="py-2"><a href="/news/article-79803.htm" title="重庆哪儿可以领养宠物狗（重庆哪里可以领养宠物狗）">重庆哪儿可以领养宠物狗（重庆哪里可以领养宠物狗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-5-free-node-subscribe.htm" title="VPN地址分享 | 4月5日18M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点地址">VPN地址分享 | 4月5日18M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-1-free-node-subscribe-links.htm" title="VPN地址分享 | 4月1日21.1M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点地址">VPN地址分享 | 4月1日21.1M/S|免费Shadowrocket/SSR/V2ray/Clash订阅节点地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">41</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== END ABOUT======  -->
+        <!-- ====== START FOOTER ======  -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- START FOOTER BOTTOM -->
+                <div class="offset-md-3 col-md-6 offset-md-3">
+                    <!-- START RIGHTS -->
+                    <div class="copyright">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <p>VPN地址分享 推荐免费VPN节点订阅中文网 版权所有</p>
+                        <p>Powered by WordPress</p>
+                    </div>
+                    <!-- END RIGHTS -->
+                </div>
+                <!-- END FOOTER BOTTOM -->
+            </div>
+        </div>
+    </section>
+    <!-- ====== END FOOTER ======  -->
+    <!-- ====== JS ======  -->
+    <!--jquery-3.3.1 js-->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery-3.3.1.min.js"></script>
+    <!-- popper js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/bootstrap.min.js"></script>
+    <!-- scrollIt js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/scrollIt.min.js"></script>
+    <!-- countTo js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery.countTo.js"></script>
+    <!-- filter js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery.filterizr.min.js"></script>
+    <!-- waypoints js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/waypoints.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/owl.carousel.min.js"></script>
+    <!-- validator js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/validator.js"></script>
+    <!-- coustom js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/main.js"></script>
+    <!-- lightbox js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/lightbox.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

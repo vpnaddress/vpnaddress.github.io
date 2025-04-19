@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnaddress.github.io/news/article-97963.htm" />
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Python语法学习之进程的创建与常用方法详解_python</title>
+        <meta name="description" content="目录  进程的创建模块 - multiprocessing  创建进程函数 - Process  进程的常用方法  start 函数 join 函数 kill 函数 与 is_alive 函数  进程" />
+        <link rel="icon" href="/assets/website/img/windowsnekoray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN地址分享 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnaddress.github.io/news/article-97963.htm" />
+    <meta property="og:site_name" content="VPN地址分享 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="Python语法学习之进程的创建与常用方法详解_python" />
+    <meta property="og:image" content="https://vpnaddress.github.io/uploads/20240707/7687b696c066e336577b0eb73a6fea0d.webp" />
+        <meta property="og:release_date" content="2025-04-17T09:01:12" />
+    <meta property="og:updated_time" content="2025-04-17T09:01:12" />
+        <meta property="og:description" content="目录  进程的创建模块 - multiprocessing  创建进程函数 - Process  进程的常用方法  start 函数 join 函数 kill 函数 与 is_alive 函数  进程" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Python语法学习之进程的创建与常用方法详解_python">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="/assets/website/css/windowsnekoray/bootstrap.min.css">
+    <!-- FONT-AWESOME -->
+    <link rel="stylesheet" href="/assets/website/css/windowsnekoray/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- OWL CAROUSEL -->
+    <link href="/assets/website/css/windowsnekoray/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/website/css/windowsnekoray/owl.theme.default.min.css" rel="stylesheet">
+    <!-- LIGHTBOX -->
+    <link rel=" stylesheet" href="/assets/website/css/windowsnekoray/lightbox.css">
+    <!--Style CSS file-->
+    <link rel=" stylesheet" href="/assets/website/css/windowsnekoray/style.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J35WSP1N0P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J35WSP1N0P');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- ====== Preloader ======  -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- ======End Preloader ======  -->
+    <!-- ======START NAVGITION ======  -->
+    <nav class="navbar navbar-expand-lg">
+        <!-- logo -->
+        <a class="navbar-brand" href="/">
+                <span>VPN地址分享</span>
+                </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
+            <span class="icon-bar"><i class="fa fa-bars fa-2x"></i></span>
+        </button>
+        <!--End of Resposive Toggle icon-->
+        <div class="collapse navbar-collapse" id="navbarText">
+            <!--Main menu navigation list-->
+            <ul class="navbar-nav ml-auto line">
+                                <li class="nav-item">
+                    <a class="nav-link" href="/">首页</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/free-nodes/">免费节点</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/news/">新闻资讯</a>
+                </li>
+                                <li class="nav-item">
+                    <a class="nav-link" href="/client.htm">客户端</a>
+                </li>
+                            </ul>
+            <!--End of Main menu navigation list-->
+        </div>
+        <!--End of resposive collapse class-->
+    </nav>
+    <!-- ====== END NAVGITION ======  -->
+    <!-- =======START HEADER=========== -->
+    <header class="home list" id="home" data-scroll-index="0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 home-content mt-md-5 mt-sm-5">
+                    <h2 class="heading-tertiary mt-3 mb-3">
+                        Python语法学习之进程的创建与常用方法详解_python                    </h2>
+                    <p class="mb-5">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / <span>正文</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ====== END HEADER ======  -->
+    <!-- Scroll to Top -->
+    <div id="scroll-to-top"><i class="fa fa-arrow-up fa-fw"></i></div>
+    <!-- ====== START ABOUT ======  -->
+    <section class="about padding" id="about" data-scroll-index="1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">进程的创建模块 - multiprocessing</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">创建进程函数 - Process</a></li> </ul> <li><a href="#_label1" rel="nofollow">进程的常用方法</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_1" rel="nofollow">start 函数</a></li> <li><a href="#_lab2_1_2" rel="nofollow">join 函数</a></li> <li><a href="#_lab2_1_3" rel="nofollow">kill 函数 与 is_alive 函数</a></li> </ul> <li><a href="#_label2" rel="nofollow">进程的相关问题</a></li> <ul class="second_class_ul"></ul> </ul> </div> <p>该章节我们来学习一下在 Python 中去创建并使用多进程的方法，通过学习该章节，我们将可以通过创建多个进程来帮助我们提高脚本执行的效率。可以认为缩短脚本执行的时间，就是提高执行我们脚本的效率。接下来让我们都看一下今天的章节知识点都有哪些？</p> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>进程的创建模块 - multiprocessing</h2> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3>创建进程函数 - Process</h3> <table> <tbody> <tr> <th>函数名</th> <th>介绍</th> <th>参数</th> <th>返回值</th> </tr> <tr> <td>Process</td> <td>创建一个进程</td> <td>target, args</td> <td>进程对象</td> </tr> </tbody> </table> <p>Process功能介绍：实例化一个对象；它需要传入两个参数 target 与 args：target 是一个函数，args 是对应一个函数的参数(args参数是一个元组)。其实我们可以这样去理解，在一个脚本中创建子进程，目的是为了让它执行我们脚本中的某个函数。换句话讲，我们将脚本中的某一个函数单独的启用一个进程去执行。</p> <p>我们说过进程之间互不干扰，可以同时执行。所以我们可以认为主进程中的程序和子进程的函数是相互不干扰的，听起来可能很难理解，一会儿下文我们进行一个案例的小练习，一遍帮助大家去更好的理解其中的含义。</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>进程的常用方法</h2> <table> <tbody> <tr> <th>函数名</th> <th>介绍</th> <th>参数</th> <th>返回值</th> </tr> <tr> <td>start</td> <td>执行进程</td> <td>无</td> <td>无</td> </tr> <tr> <td>join</td> <td>阻塞进程</td> <td>无</td> <td>无</td> </tr> <tr> <td>kill</td> <td>杀死进程</td> <td>无</td> <td>无</td> </tr> <tr> <td>is_alive</td> <td>判断进程是否存活</td> <td>无</td> <td>bool</td> </tr> </tbody> </table> <ul> <li>start 函数：通过调用它，可以直接启动我们创建的进程。它会马上执行我们进程中传入的函数，start 函数没有任何参数，也没有返回值。</li> <li>join 函数：我们说过，主进程和子进程的程序会同时运行，互不影响。这样就会有一个问题，有可能是 子进程 先执行完它的业务，也有可能是 主进程 先执行完它的业务逻辑。如果有的时候我们必须要先执行完 子进程的业务 再执行 主进程的业务 。则通过调用 join 函数，在这一函数下面执行的主进程业务要等待子进程完成之后才会继续执行。我们将 join 这样的函数叫做 等待/阻塞函数。join 函数没有任何参数，也没有返回值。</li> <li>kill 函数：如果我们在执行子进程的过程中发现不需要这个子进程继续运行了，就可以使用 kill 函数杀死当前的这个子进程，杀死的这个子进程不会在执行子进程中函数的业务逻辑。kill 函数没有任何参数，也没有返回值。</li> <li>is_alive 函数：通过调用这个函数可以判断当前的进程是否是存活状态，它返回一个 bool 值。True 表示当前进程还在，程序还在继续执行；如果是 False 则代表当前进程已经结束了</li> </ul> <p class="maodian"><a name="_lab2_1_1" rel="nofollow"></a></p> <h3>start 函数</h3> <p>演示案例：</p> <ul> <li>我们先定义两个简单的函数，每个函数定义两个简单的 for 循环。</li> <li>每执行一次循环，休眠一秒的时间。</li> <li>在两次循环的开始定义一个实例化时间对象，用以计算两次循环的时间间隔。</li> <li>同时，获取脚本执行的进程号; 看看是一个怎样的结果。</li> </ul> <div class="ay1code"> <pre class="brush:py;"># coding:utf-8      import time  import os      def work_for_first():        for i in range(5):          print('\'work_for_first\' 函数的循环值：%s', '进程号为：%s' % i, os.getpid())	# os.getpid() 为获取进程号函数          time.sleep(1)      def work_for_second():      for i in range(5):          print('\'work_for_second\' 函数的循环值：%s',  '进程号为：%s' % i, os.getpid())          time.sleep(1)      if __name__ == '__main__':      start_time = time.time()    # 获取执行 循环 之前的时间戳      work_for_first()      work_for_second()      end_time = time.time() - start_time     # 获取执行 循环 结束的时间戳      print('耗时时间为：{}, 进程号为：{}'.format(end_time, os.getpid()))  # 获取耗时与进程号  </pre> </div> <p>执行结果如下图：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/ec7734993dcffb067e72e3648f618bb9.jpg"></p> <p>OKK！接下来进入我们今天要学习的主题。</p> <p>将 work_for_first() 函数创建一个新的子进程去执行。</p> <div class="ay1code"> <pre class="brush:py;"># coding:utf-8      import time  import os  import multiprocessing      def work_for_first():        for i in range(5):          print('\'work_for_first\' 函数的循环值：{}，进程号为：{}'.format(i, os.getpid()))          time.sleep(1)      def work_for_second():      for i in range(5):          print('\'work_for_second\' 函数的循环值：{}，进程号为：{}'.format(i, os.getpid()))          time.sleep(1)      if __name__ == '__main__':      start_time = time.time()    # 获取执行 循环 之前的时间戳      work_for_first_process = multiprocessing.Process(target=work_for_first)     # 因为我们传入的函数没有参数所以 args 可以不写      work_for_first_process.start()      work_for_second()      end_time = time.time() - start_time     # 获取执行 循环 结束的时间戳      print('耗时时间为：{}, 进程号为：{}'.format(end_time, os.getpid()))  # 获取耗时与进程号  </pre> </div> <p>执行结果如下图：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/1b82472f4a08a846c7a34e6143bbc14c.jpg"></p> <p>因为我们针对 work_for_first() 函数创建一个新的子进程去执行，所以我们的耗时变为了 5秒。那么如果我们将 work_for_second() 函数也创建一个新的子进程去执行，耗时又会是多少呢？我们接着往下看。</p> <div class="ay1code"> <pre class="brush:py;"># coding:utf-8      import time  import os  import multiprocessing      def work_for_first():        for i in range(5):          print('\'work_for_first\' 函数的循环值：{}，进程号为：{}'.format(i, os.getpid()))          time.sleep(1)      def work_for_second():      for i in range(5):          print('\'work_for_second\' 函数的循环值：{}，进程号为：{}'.format(i, os.getpid()))          time.sleep(1)      if __name__ == '__main__':      start_time = time.time()    # 获取执行 循环 之前的时间戳      work_for_first_process = multiprocessing.Process(target=work_for_first)     # 因为我们传入的函数没有参数所以 args 可以不写      work_for_first_process.start()        work_for_second_process = multiprocessing.Process(target=work_for_second)      work_for_second_process.start()      end_time = time.time() - start_time     # 获取执行 循环 结束的时间戳      print('耗时时间为：{}, 进程号为：{}'.format(end_time, os.getpid()))  # 获取耗时与进程号  </pre> </div> <p>执行结果如下图：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/f86c8d8ec844d7d5101e39b97339758e.jpg"></p> <p>PS：从脚本中执行入口的 main 函数可以看出 work_for_first() 函数 与 work_for_second() 函数 分别都由各自的子进程来执行，主进程实际执行的 只有 23行、29行、30行代码，所以从耗时来看，主进程实际上只执行了 0.026 秒。</p> <p>这里再思考一个问题，如果是每一个子进程都单独的通过 .start 去启动，那么在子进程很多的情况下，启动的确实会有一些慢了。这个时候我们就可以通过 for 循环的方式去启动子进程。方式如下：</p> <div class="ay1code"> <pre class="brush:py;">    for sun_process in (work_for_first_process, work_for_second_process):          sun_process.start()  </pre> </div> <p class="maodian"><a name="_lab2_1_2" rel="nofollow"></a></p> <h3>join 函数</h3> <p>同样的也会存在着这样一种情况，我们希望子进程运行结束之后再去执行我们的主进程，这时候我们就会使用到 join 函数 。</p> <p>这里我们就利用上文的 进程 for循环同时启动两个子进程，然后我们再在下一个 for循环 执行 join 函数，我们看看会发生什么。</p> <div class="ay1code"> <pre class="brush:py;"># coding:utf-8      import time  import os  import multiprocessing      def work_for_first():        for i in range(5):          print('\'work_for_first\' 函数的循环值：{}，进程号为：{}'.format(i, os.getpid()))          time.sleep(1)      def work_for_second():      for i in range(5):          print('\'work_for_second\' 函数的循环值：{}，进程号为：{}'.format(i, os.getpid()))          time.sleep(1)      if __name__ == '__main__':      start_time = time.time()    # 获取执行 循环 之前的时间戳      work_for_first_process = multiprocessing.Process(target=work_for_first)     # 因为我们传入的函数没有参数所以 args 可以不写      # work_for_first_process.start()        work_for_second_process = multiprocessing.Process(target=work_for_second)      # work_for_second_process.start()        for sun_process in (work_for_first_process, work_for_second_process):          sun_process.start()        for sun_process in (work_for_first_process, work_for_second_process):          sun_process.join()        end_time = time.time() - start_time     # 获取执行 循环 结束的时间戳      print('耗时时间为：{}, 进程号为：{}'.format(end_time, os.getpid()))  # 获取耗时与进程号  </pre> </div> <p>执行结果如下图：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/2bf93bc948ff9470423b6ee6c75301e0.jpg"></p> <p class="maodian"><a name="_lab2_1_3" rel="nofollow"></a></p> <h3>kill 函数 与 is_alive 函数</h3> <p>接下来我们再尝试一个场景，利用 for 循环，我们同时启动 work_for_first() 函数 与 work_for_second() 函数 的子进程。然后我们再在另一个 for 循环中，将 work_for_second() 函数 的子进程 kill 掉，然后判断两个子进程的存活状态。</p> <p>示例脚本如下：</p> <div class="ay1code"> <pre class="brush:py;"># coding:utf-8      import time  import os  import multiprocessing      def work_for_first():        for i in range(5):          print('\'work_for_first\' 函数的循环值：{}，进程号为：{}'.format(i, os.getpid()))          time.sleep(1)      def work_for_second():      for i in range(5):          print('\'work_for_second\' 函数的循环值：{}，进程号为：{}'.format(i, os.getpid()))          time.sleep(1)      if __name__ == '__main__':      start_time = time.time()    # 获取执行 循环 之前的时间戳      work_for_first_process = multiprocessing.Process(target=work_for_first)     # 因为我们传入的函数没有参数所以 args 可以不写      # work_for_first_process.start()        work_for_second_process = multiprocessing.Process(target=work_for_second)      # work_for_second_process.start()        for sun_process in (work_for_first_process, work_for_second_process):          sun_process.start()          time.sleep(1)   # 休眠一秒是为了 work_for_second_process 子进程 至少能够运行一次          for sun_process in (work_for_first_process, work_for_second_process):          work_for_second_process.kill()          if work_for_first_process.is_alive():              print('\'work_for_first_process\' 子进程当前存活状态为：True')          elif not work_for_second_process.is_alive():              print('\'work_for_second_process\' 子进程当前存活状态为：False')            sun_process.join()        end_time = time.time() - start_time     # 获取执行 循环 结束的时间戳      print('耗时时间为：{}, 进程号为：{}'.format(end_time, os.getpid()))  # 获取耗时与进程号  </pre> </div> <p>运行结果如下：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220427/a4a90ed272f9a86faa793407e239dcbe.jpg"></p> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>进程的相关问题</h2> <p>通过学习多进程的创建、启动，我们可以充分的体会到进程给我们带来的好处。它可以使我们的脚本程序执行时间进行缩短，从而提高工作效率。</p> <p>然而多进程也有一些问题：</p> <ul> <li>通过进程模块执行的函数无法获取返回值，即便这个函数拥有 return 关键字也无法获取到，这也是我们进程的弊端。</li> <li>多个进程同时修改文件可能会出现错误。</li> <li>进程数量太多可能会造成资源不足、甚至死机等情况。</li> </ul> <p>关于进程的这些问题，其实也并不是不能解决。在后续更新的 进程间的通信 、进程池与进程锁 的章节我们再进行详细的介绍。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-97173.htm">3.7&#8211;Kotlin 课堂：标准函数和静态方法</a></p>
+                                        <p>下一个：<a href="/news/article-97964.htm">动物疫苗类型有几种（动物疫苗有哪几种）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-81860.htm" title="CentOS 8迁移Rocky Linux 8手记_在线工具">CentOS 8迁移Rocky Linux 8手记_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-80463.htm" title="动物疫苗厂家有哪些牌子好 动物疫苗厂家有哪些牌子好一点">动物疫苗厂家有哪些牌子好 动物疫苗厂家有哪些牌子好一点</a></li>
+                        <li class="py-2"><a href="/news/article-96495.htm" title="mysql中如何存储日期数据">mysql中如何存储日期数据</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-clash-v2ray-ss-ssr.htm" title="VPN地址分享 | 3月18日21.2M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点地址">VPN地址分享 | 3月18日21.2M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-83979.htm" title="全国动物疫苗生产厂家有哪些品牌（全国动物疫苗生产厂家有哪些品牌好）">全国动物疫苗生产厂家有哪些品牌（全国动物疫苗生产厂家有哪些品牌好）</a></li>
+                        <li class="py-2"><a href="/news/article-94366.htm" title="centos 7redis设置开机自动启动">centos 7redis设置开机自动启动</a></li>
+                        <li class="py-2"><a href="/news/article-89753.htm" title="宠物哪里可以领养（宠物在哪可以领养）">宠物哪里可以领养（宠物在哪可以领养）</a></li>
+                        <li class="py-2"><a href="/news/article-97173.htm" title="3.7&#8211;Kotlin 课堂：标准函数和静态方法">3.7&#8211;Kotlin 课堂：标准函数和静态方法</a></li>
+                        <li class="py-2"><a href="/news/article-97964.htm" title="动物疫苗类型有几种（动物疫苗有哪几种）">动物疫苗类型有几种（动物疫苗有哪几种）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-9-node-share.htm" title="VPN地址分享 | 4月9日18.2M/S|免费Shadowrocket/V2ray/SSR/Clash订阅节点地址">VPN地址分享 | 4月9日18.2M/S|免费Shadowrocket/V2ray/SSR/Clash订阅节点地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">41</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== END ABOUT======  -->
+        <!-- ====== START FOOTER ======  -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- START FOOTER BOTTOM -->
+                <div class="offset-md-3 col-md-6 offset-md-3">
+                    <!-- START RIGHTS -->
+                    <div class="copyright">
+                                            <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                        <p>VPN地址分享 推荐免费VPN节点订阅中文网 版权所有</p>
+                        <p>Powered by WordPress</p>
+                    </div>
+                    <!-- END RIGHTS -->
+                </div>
+                <!-- END FOOTER BOTTOM -->
+            </div>
+        </div>
+    </section>
+    <!-- ====== END FOOTER ======  -->
+    <!-- ====== JS ======  -->
+    <!--jquery-3.3.1 js-->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery-3.3.1.min.js"></script>
+    <!-- popper js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/bootstrap.min.js"></script>
+    <!-- scrollIt js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/scrollIt.min.js"></script>
+    <!-- countTo js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery.countTo.js"></script>
+    <!-- filter js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/jquery.filterizr.min.js"></script>
+    <!-- waypoints js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/waypoints.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/owl.carousel.min.js"></script>
+    <!-- validator js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/validator.js"></script>
+    <!-- coustom js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/main.js"></script>
+    <!-- lightbox js -->
+    <script src="/assets/website/js/frontend/windowsnekoray/lightbox.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
