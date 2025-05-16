@@ -1,4 +1,4 @@
-# VPN地址分享 | 5月11日21.7M/S|免费Shadowrocket/V2ray/Clash/SSR订阅节点地址  更新时间 2025-05-11 07:21:04
+# VPN地址分享 | 5月16日18.7M/S|免费V2ray/SSR/Clash/Shadowrocket订阅节点地址  更新时间 2025-05-16 09:15:47
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://vpnaddress.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://vpnaddress.github.io/uploads/2025/05/0-20250511.yaml
-- https://vpnaddress.github.io/uploads/2025/05/1-20250511.yaml
-- https://vpnaddress.github.io/uploads/2025/05/2-20250511.yaml
-- https://vpnaddress.github.io/uploads/2025/05/3-20250511.yaml
-- https://vpnaddress.github.io/uploads/2025/05/4-20250511.yaml
+- https://vpnaddress.github.io/uploads/2025/05/0-20250516.yaml
+- https://vpnaddress.github.io/uploads/2025/05/1-20250516.yaml
+- https://vpnaddress.github.io/uploads/2025/05/2-20250516.yaml
+- https://vpnaddress.github.io/uploads/2025/05/3-20250516.yaml
+- https://vpnaddress.github.io/uploads/2025/05/4-20250516.yaml
 
 ### V2ray订阅链接
 
-- https://vpnaddress.github.io/uploads/2025/05/0-20250511.txt
-- https://vpnaddress.github.io/uploads/2025/05/1-20250511.txt
-- https://vpnaddress.github.io/uploads/2025/05/2-20250511.txt
-- https://vpnaddress.github.io/uploads/2025/05/3-20250511.txt
-- https://vpnaddress.github.io/uploads/2025/05/4-20250511.txt
+- https://vpnaddress.github.io/uploads/2025/05/0-20250516.txt
+- https://vpnaddress.github.io/uploads/2025/05/1-20250516.txt
+- https://vpnaddress.github.io/uploads/2025/05/2-20250516.txt
+- https://vpnaddress.github.io/uploads/2025/05/3-20250516.txt
+- https://vpnaddress.github.io/uploads/2025/05/4-20250516.txt
 
 ### Sing-box订阅链接
 
-- https://vpnaddress.github.io/uploads/2025/05/20250511.json
+- https://vpnaddress.github.io/uploads/2025/05/20250516.json
 
 ## 更多clash节点订阅 ：
 
