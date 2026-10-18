@@ -382,19 +382,9 @@ A：可以。使用 Clash Meta、Clash Classic 等免费内核版本，不存在
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 如何实现按端口和协议分流？</h5></div>
+    <div class="panel-heading"><h5>SSR 如何选择合适混淆提高稳定性？</h5></div>
     <div class="panel-body">
-        QuantumultX 支持按 TCP、UDP、端口及应用协议分流流量，结合策略组选择最优节点。可为游戏、视频和广告屏蔽提供最佳网络体验，提高访问速度和稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化网络流量？</h5></div>
-    <div class="panel-body">
-        Matsuri 会定期测速节点延迟，并结合策略组自动选择延迟最低节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 如何降低移动网络延迟？</h5></div>
-    <div class="panel-body">
-        XTLS 通过减少握手次数和加密开销降低延迟。结合策略组和多节点切换，可在高延迟或不稳定的移动网络环境中保持连接稳定，提升网页浏览、视频和游戏体验流畅度。<hr />    </div>
+        选择混淆方式时应根据网络环境和封锁程度，例如 tls1.2_ticket_auth 可模拟 HTTPS 流量。合理组合协议和混淆可提升节点稳定性和抗封锁能力，确保长期科学上网体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 连接延迟过高该如何优化？</h5></div>
@@ -402,9 +392,9 @@ A：可以。使用 Clash Meta、Clash Classic 等免费内核版本，不存在
         可尝试切换传输协议（如 WS、gRPC）、调整 MTU 或启用 MUX 多路复用功能。同时检查服务器地理位置、带宽和延迟，并选择最优节点以降低延迟。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 是否支持自定义 DNS 解析？</h5></div>
+    <div class="panel-heading"><h5>VMess 的 TLS+伪装模式适合什么情况？</h5></div>
     <div class="panel-body">
-        支持。用户可以在配置中指定 DNS 服务器或启用 DoH/DoT 功能，确保域名解析安全和快速，避免本地 DNS 污染或被劫持。<hr />    </div>
+        TLS+伪装模式能隐藏真实流量特征，适用于封锁严格的环境。结合域名伪装和证书配置，可以使流量看似普通 HTTPS 请求，提高安全性和抗封锁能力。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow 能与 Clash 共存吗？</h5></div>
@@ -412,24 +402,34 @@ A：可以。使用 Clash Meta、Clash Classic 等免费内核版本，不存在
         可以。Mellow 与 Clash 核心不同，前者采用透明代理技术，后者通过系统代理生效。两者配置端口不冲突的情况下可共存运行，用于不同的流量处理场景。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何按 IP 段实现智能分流？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持根据 IP 段匹配流量，将国内流量直连、国外流量走代理。结合策略组和规则文件，实现精细化流量管理，保证访问速度和稳定性，同时提高节点使用效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 的 TLS+伪装模式适合什么情况？</h5></div>
-    <div class="panel-body">
-        TLS+伪装模式能隐藏真实流量特征，适用于封锁严格的环境。结合域名伪装和证书配置，可以使流量看似普通 HTTPS 请求，提高安全性和抗封锁能力。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Shadowrocket 的重写功能有什么用途？</h5></div>
     <div class="panel-body">
         Shadowrocket 的重写功能允许用户在请求阶段修改 HTTP 头、响应内容或重定向 URL。这一功能常用于屏蔽广告、解锁区域限制或调试网页请求，非常灵活强大。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 如何选择合适混淆提高稳定性？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 如何按 IP 段实现智能分流？</h5></div>
     <div class="panel-body">
-        选择混淆方式时应根据网络环境和封锁程度，例如 tls1.2_ticket_auth 可模拟 HTTPS 流量。合理组合协议和混淆可提升节点稳定性和抗封锁能力，确保长期科学上网体验。    </div>
+        Sing-box 支持根据 IP 段匹配流量，将国内流量直连、国外流量走代理。结合策略组和规则文件，实现精细化流量管理，保证访问速度和稳定性，同时提高节点使用效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 是否支持自定义 DNS 解析？</h5></div>
+    <div class="panel-body">
+        支持。用户可以在配置中指定 DNS 服务器或启用 DoH/DoT 功能，确保域名解析安全和快速，避免本地 DNS 污染或被劫持。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化网络流量？</h5></div>
+    <div class="panel-body">
+        Matsuri 会定期测速节点延迟，并结合策略组自动选择延迟最低节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 如何实现按端口和协议分流？</h5></div>
+    <div class="panel-body">
+        QuantumultX 支持按 TCP、UDP、端口及应用协议分流流量，结合策略组选择最优节点。可为游戏、视频和广告屏蔽提供最佳网络体验，提高访问速度和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + XTLS 如何降低移动网络延迟？</h5></div>
+    <div class="panel-body">
+        XTLS 通过减少握手次数和加密开销降低延迟。结合策略组和多节点切换，可在高延迟或不稳定的移动网络环境中保持连接稳定，提升网页浏览、视频和游戏体验流畅度。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -477,16 +477,16 @@ A：可以。使用 Clash Meta、Clash Classic 等免费内核版本，不存在
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-10-5.htm" title="VPN地址分享 | 10月5日19.6M/S|免费Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点订阅节点地址">VPN地址分享 | 10月5日19.6M/S|免费Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点订阅节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-3.htm" title="VPN地址分享 | 10月3日18.4M/S|免费Singbox节点/Trojan节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点订阅节点地址">VPN地址分享 | 10月3日18.4M/S|免费Singbox节点/Trojan节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点订阅节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-15.htm" title="VPN地址分享 | 9月15日21.7M/S|免费SSR节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点订阅节点地址">VPN地址分享 | 9月15日21.7M/S|免费SSR节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点订阅节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-9-25.htm" title="VPN地址分享 | 9月25日18.9M/S|免费Clash节点/Trojan节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点订阅节点地址">VPN地址分享 | 9月25日18.9M/S|免费Clash节点/Trojan节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点订阅节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-29.htm" title="VPN地址分享 | 9月29日18.7M/S|免费SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点地址">VPN地址分享 | 9月29日18.7M/S|免费SSR节点/Singbox节点/Clash节点/Trojan节点/Shadowrocket节点/V2ray节点订阅节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-11.htm" title="VPN地址分享 | 9月11日18.5M/S|免费SSR节点/Clash节点/Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点订阅节点地址">VPN地址分享 | 9月11日18.5M/S|免费SSR节点/Clash节点/Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点订阅节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-10-9.htm" title="VPN地址分享 | 10月9日19.5M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点订阅节点地址">VPN地址分享 | 10月9日19.5M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点订阅节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-10-top-vpn-node.htm" title="VPN地址分享 | 10月10日20.8M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Trojan节点订阅节点地址">VPN地址分享 | 10月10日20.8M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Trojan节点订阅节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-9-19.htm" title="VPN地址分享 | 9月19日21.8M/S|免费Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/Clash节点/SSR节点订阅节点地址">VPN地址分享 | 9月19日21.8M/S|免费Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/Clash节点/SSR节点订阅节点地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-10-8-free-node-subscribe.htm" title="VPN地址分享 | 10月8日19.2M/S|免费Singbox节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点/Clash节点订阅节点地址">VPN地址分享 | 10月8日19.2M/S|免费Singbox节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点/Clash节点订阅节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-12-free-vpn-node.htm" title="VPN地址分享 | 9月12日19.1M/S|免费Singbox节点/V2ray节点/Trojan节点/Clash节点/SSR节点/Shadowrocket节点订阅节点地址">VPN地址分享 | 9月12日19.1M/S|免费Singbox节点/V2ray节点/Trojan节点/Clash节点/SSR节点/Shadowrocket节点订阅节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-14-node-share.htm" title="VPN地址分享 | 10月14日22.8M/S|免费Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点订阅节点地址">VPN地址分享 | 10月14日22.8M/S|免费Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点订阅节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-9-5.htm" title="VPN地址分享 | 9月5日19.5M/S|免费SSR节点/Singbox节点/Clash节点/Trojan节点/V2ray节点/Shadowrocket节点订阅节点地址">VPN地址分享 | 9月5日19.5M/S|免费SSR节点/Singbox节点/Clash节点/Trojan节点/V2ray节点/Shadowrocket节点订阅节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-28-vpn-free.htm" title="VPN地址分享 | 9月28日21.2M/S|免费Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点订阅节点地址">VPN地址分享 | 9月28日21.2M/S|免费Trojan节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点订阅节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-30-free-node-subscribe.htm" title="VPN地址分享 | 9月30日18.1M/S|免费Clash节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点订阅节点地址">VPN地址分享 | 9月30日18.1M/S|免费Clash节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点订阅节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-10-11.htm" title="VPN地址分享 | 10月11日18.5M/S|免费Trojan节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Clash节点订阅节点地址">VPN地址分享 | 10月11日18.5M/S|免费Trojan节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Clash节点订阅节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-4-node-share.htm" title="VPN地址分享 | 10月4日22.1M/S|免费V2ray节点/Singbox节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点订阅节点地址">VPN地址分享 | 10月4日22.1M/S|免费V2ray节点/Singbox节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点订阅节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/top-vpn-2026-10-7.htm" title="VPN地址分享 | 10月7日22.7M/S|免费Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/V2ray节点订阅节点地址">VPN地址分享 | 10月7日22.7M/S|免费Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/V2ray节点订阅节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-22-vpn-free.htm" title="VPN地址分享 | 9月22日21.1M/S|免费Clash节点/V2ray节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点订阅节点地址">VPN地址分享 | 9月22日21.1M/S|免费Clash节点/V2ray节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点订阅节点地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -498,7 +498,7 @@ A：可以。使用 Clash Meta、Clash Classic 等免费内核版本，不存在
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">10</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
